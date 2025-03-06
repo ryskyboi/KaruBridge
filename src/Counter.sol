@@ -1,14 +1,25 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
 
-contract Counter {
-    uint256 public number;
+pragma solidity ^0.8.22;
 
-    function setNumber(uint256 newNumber) public {
-        number = newNumber;
-    }
+import { ONFT721Adapter } from "@layerzerolabs/onft-evm/contracts/onft721/ONFT721Adapter.sol";
 
-    function increment() public {
-        number++;
-    }
+//  ###          # #     # #     # ######  
+//   #           # #     # ##   ## #     # 
+//   #           # #     # # # # # #     # 
+//   #           # #     # #  #  # ######  
+//   #     #     # #     # #     # #       
+//   #     #     # #     # #     # #       
+//  ###     #####   #####  #     # #       
+
+/*
+ * @notice Hypio World Order
+ * @dev contract for an ONFT721Adapter Hypio Bridge.
+ */
+contract OnftAdapter is ONFT721Adapter {
+    constructor(
+        address _token,
+        address _lzEndpoint,
+        address _owner
+    ) ONFT721Adapter(_token, _lzEndpoint, _owner) {}
 }
